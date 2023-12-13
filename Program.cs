@@ -44,8 +44,8 @@ internal class Program
             }
             current = range.Max + 1;
 
-            // 使用中レンジの最大値が全体レンジを超えている場合、ループ終了
-            if (range.Max > totalRange.Max)
+            // 使用中レンジの最大値が全体レンジ以上の場合、ループ終了
+            if (range.Max >= totalRange.Max)
             {
                 break;
             }
