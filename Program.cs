@@ -36,7 +36,7 @@ internal class Program
     }
 
     // 使用可能レンジの取得
-    private static List<Range> GetBrankRanges(List<Range> mergedRanges, Range totalRange)
+    private static List<Range> GetBrankRanges(IReadOnlyList<Range> mergedRanges, Range totalRange)
     {
         // 全体レンジと使用中レンジから使用可能レンジを取得
         List<Range> brankRanges = new List<Range>();
@@ -57,11 +57,9 @@ internal class Program
     }
 
     // 使用中レンジのマージ
-    private static List<Range> MergeRanges(List<Range> ranges)
+    private static List<Range> MergeRanges(IReadOnlyList<Range> ranges)
     {
         List<Range> mergedRanges = new List<Range>();
-
-        // 最小値でソート
         ranges = ranges.OrderBy(item => item.Min).ToList();
 
         // レンジのマージ
