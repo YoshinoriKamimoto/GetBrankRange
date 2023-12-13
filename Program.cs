@@ -11,21 +11,26 @@ internal class Program
         // 使用中レンジ
         List<Range> usedRanges = new List<Range>
         {
+            new Range(2, 5),
             new Range(2, 3),
-            new Range(2, 4),
             new Range(7, 10),
-            new Range(15, 20)
+            new Range(20, 30)
         };
-        Console.WriteLine("===使用中レンジ===");
+        Console.WriteLine("===使用中レンジ(全体)===");
         usedRanges.ForEach(item => Console.WriteLine($"Min:{item.Min} Max:{item.Max}"));
         
+        // 全体レンジと範囲が重複する使用中レンジのみ取得
+        List<Range> overlapUsedRanges = GetOverlapRanges(totalRange, usedRanges);
+        Console.WriteLine("===使用中レンジ(全体レンジ範囲重複分)===");
+        overlapUsedRanges.ForEach(item => Console.WriteLine($"Min:{item.Min} Max:{item.Max}"));
+
         // 使用中レンジマージ
-        List<Range> mergedRanges = MergeRanges(usedRanges);
-        Console.WriteLine("===使用中レンジ(マージ後)===");
-        mergedRanges.ForEach(item => Console.WriteLine($"Min:{item.Min} Max:{item.Max}"));
+        List<Range> mergedUsedRanges = MergeRanges(overlapUsedRanges);
+        Console.WriteLine("===使用中レンジ(全体レンジ範囲重複分:マージ後)===");
+        mergedUsedRanges.ForEach(item => Console.WriteLine($"Min:{item.Min} Max:{item.Max}"));
 
         // 使用可能レンジ
-        List<Range> brankRanges = GetBrankRanges(mergedRanges, totalRange);
+        List<Range> brankRanges = GetBrankRanges(mergedUsedRanges, totalRange);
         Console.WriteLine("===使用可能レンジ===");
         brankRanges.ForEach(item => Console.WriteLine($"Min:{item.Min} Max:{item.Max}"));
     }
@@ -43,14 +48,7 @@ internal class Program
                 brankRanges.Add(new Range(current, range.Min - 1));
             }
             current = range.Max + 1;
-
-            // 使用中レンジの最大値が全体レンジ以上の場合、ループ終了
-            if (range.Max >= totalRange.Max)
-            {
-                break;
-            }
         }
-
         if (current <= totalRange.Max)
         {
             brankRanges.Add(new Range(current, totalRange.Max));
@@ -95,6 +93,34 @@ internal class Program
             }
         }
         return mergedRanges;
+    }
+
+    // 重複チェック
+    private static bool IsOverlap(Range sourceRange, Range targetRange)
+    {
+        if (sourceRange.Min <= targetRange.Min && targetRange.Min <= sourceRange.Max)
+        {
+            return true;
+        }
+        if (sourceRange.Min <= targetRange.Max && targetRange.Max <= sourceRange.Max)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    // 範囲が重複するレンジ取得
+    private static List<Range> GetOverlapRanges(Range sourceRange, IReadOnlyList<Range> ranges)
+    {
+        List<Range> overlapRanges = new List<Range>();
+        foreach (Range range in ranges)
+        {
+            if (IsOverlap(sourceRange, range))
+            {
+                overlapRanges.Add(range);
+            }
+        }
+        return overlapRanges;
     }
 }
 
