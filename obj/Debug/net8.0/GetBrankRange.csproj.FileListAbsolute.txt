@@ -1,0 +1,14 @@
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\bin\Debug\net8.0\GetBrankRange.exe
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\bin\Debug\net8.0\GetBrankRange.deps.json
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\bin\Debug\net8.0\GetBrankRange.runtimeconfig.json
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\bin\Debug\net8.0\GetBrankRange.dll
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\bin\Debug\net8.0\GetBrankRange.pdb
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.AssemblyInfoInputs.cache
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.AssemblyInfo.cs
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.csproj.CoreCompileInputs.cache
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.dll
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\refint\GetBrankRange.dll
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.pdb
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.genruntimeconfig.cache
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\ref\GetBrankRange.dll
