@@ -93,14 +93,23 @@ internal class Program
         return mergedRanges;
     }
 
-    // 重複チェック
-    private static bool IsOverlap(Range sourceRange, Range targetRange)
+    // レンジ重複チェック
+    private static bool IsOverlap(Range range1, Range range2)
     {
-        if (sourceRange.Min <= targetRange.Min && targetRange.Min <= sourceRange.Max)
+        // 2つのレンジの最小値・最大値がそれぞれ互いに重複する範囲がないかどうかチェック
+        if (range2.Min <= range1.Min && range1.Min <= range2.Max)
         {
             return true;
         }
-        if (sourceRange.Min <= targetRange.Max && targetRange.Max <= sourceRange.Max)
+        if (range2.Min <= range1.Max && range1.Max <= range2.Max)
+        {
+            return true;
+        }
+        if (range1.Min <= range2.Min && range2.Min <= range1.Max)
+        {
+            return true;
+        }
+        if (range1.Min <= range2.Max && range2.Max <= range1.Max)
         {
             return true;
         }
