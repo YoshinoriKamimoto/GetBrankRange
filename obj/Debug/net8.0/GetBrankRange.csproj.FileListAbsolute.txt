@@ -12,3 +12,4 @@ C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\refint\GetBra
 C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.pdb
 C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.genruntimeconfig.cache
 C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\ref\GetBrankRange.dll
+C:\Users\kamimoto\Desktop\work\test\GetBrankRange\obj\Debug\net8.0\GetBrankRange.sourcelink.json

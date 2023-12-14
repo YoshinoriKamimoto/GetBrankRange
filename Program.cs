@@ -11,9 +11,10 @@ internal class Program
         // 使用中レンジ
         List<Range> usedRanges = new List<Range>
         {
-            new Range(2, 5),
+            new Range(2, 4),
             new Range(2, 3),
             new Range(7, 10),
+            new Range(8, 12),
             new Range(20, 30)
         };
         Console.WriteLine("===使用中レンジ(全体)===");
